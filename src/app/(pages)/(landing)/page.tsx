@@ -14,6 +14,8 @@ import logoslinks from "@/data/landing/media";
 import Link from "next/link";
 import { email } from "@/constants/details";
 import { Input } from "@/components/ui/input";
+import Navbar from "@/components/common/layout/nav";
+import Footer from "@/components/common/layout/footer";
 
 export default function Landing() {
   const style = {
@@ -21,26 +23,6 @@ export default function Landing() {
   };
   return (
     <div>
-      <LandingContainer>
-        <div className="py-2">
-          {/* nav */}
-          <div className="flex flex-row sm:justify-between gap-20 ">
-            <div className="flex">
-              <Image src="/logo/logo.png" alt="logo" width={100} height={100} />
-            </div>
-            <div className="flex flex-row gap-4  items-center sm:px-24">
-              <div className="flex ">
-                <Button className="p-5">Doctor</Button>
-              </div>
-              <div className="flex">
-                <Button variant={"outline"} className="p-5">
-                  Patient
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </LandingContainer>
       {/* Simplify your medical */}
       <div className="bg-ugray-100">
         <LandingContainer>
@@ -378,17 +360,17 @@ export default function Landing() {
 
             {/* Contact Us */}
             <div className="flex flex-1 flex-col gap-5  ">
-              <form>
+              <form action="https://getform.io/f/lakmglva" method="POST">
                 <div className="flex flex-col gap-5">
                   <div className=" flex flex-col gap-5 items-center">
                     <div className="flex lg:w-full md:w-96 w-72 flex-col  ">
-                      Full Name <Input className=""></Input>
+                      Full Name <Input type="text" name="name"></Input>
                     </div>
                     <div className="flex lg:w-full md:w-96 w-72 flex-col ">
-                      Email <Input className=""></Input>
+                      Email <Input type="email" name="email"></Input>
                     </div>
                     <div className="flex lg:w-full md:w-96 w-72 flex-col ">
-                      Message <Input className=""></Input>
+                      Message <Input type="text" name="message"></Input>
                     </div>
                   </div>
 
@@ -401,6 +383,8 @@ export default function Landing() {
           </div>
         </LandingContainer>
       </div>
+
+      <div className=""></div>
     </div>
   );
 }
